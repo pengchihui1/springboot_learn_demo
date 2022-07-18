@@ -1,6 +1,12 @@
 .idea
 .git
 */target
+/target
+target
+.classpath
+.project
+.settings
+.externalToolBuilders
 
 
 # Compiled class file
@@ -27,3 +33,4 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
