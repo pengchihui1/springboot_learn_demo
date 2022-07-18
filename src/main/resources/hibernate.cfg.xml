@@ -9,11 +9,11 @@
     <!--MySql 驱动程序 eg. mysql-connector-java-5.1.6-bin.jar-->
     <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <!-- JDBC URL -->
-    <property name="connection.url">jdbc:mysql://localhost:3306/book_system?characterEncoding=utf-8</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/mysql/learn_book?characterEncoding=utf-8</property>
     <!-- 数据库用户名-->
     <property name="connection.username">root</property>
     <!-- 数据库密码-->
-    <property name="connection.password">root</property>
+    <property name="connection.password"></property>
 
 
     <!-- 配置jpa实现产品的基本属性 -->

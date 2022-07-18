@@ -128,11 +128,12 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.1</version>
         </dependency>
-        <dependency>
+      <dependency>
             <groupId>com.example.diyu</groupId>
             <artifactId>demo</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+         
     </dependencies>
 
     <build>
