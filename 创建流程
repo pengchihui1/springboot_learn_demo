@@ -1,0 +1,85 @@
+IDEA创建springboot  jdk1.8之上  springboot里面内置Tomcat
+
+初始化Spring Intializr  com.anthorry   springbootssm  jdk8  war包
+
+常用组件
+减少写git/set方法               Dcveloper_Tools             Lombok
+立刻部署                        Dcveloper_Tools             Spring_Boot_DevTools
+web接口                        Web                         Spring Web
+模板引擎                        Template_Engines            Thymeleaf/freemarker
+SQL                           springDate JPA/springDate JDBC/MYSQL Driver
+
+springboot图书管理系统
+后台技术 springboot  themleaf  shiro springDate JPA/springDate
+前端框架 layui框架
+项目功能
+图书管理 图书类型管理
+管理员管理 普通用户管理
+管理员：图书管理  催还图书
+用户：可以借阅    归还图书   借书需要金额
+图书上传   可以剪辑
+
+上传  src pom.xml
+.idea
+.mvn
+
+目录com.sun.demo
+service
+pojo/entity
+controller
+mapper
+
+运行
+路口三角形右键运行
+或者DemoApplication
+
+
+#配置文件application.properties
+#port
+server.port=8889
+#path
+server.servlet.context-path=/
+
+#tomcat jdbc
+spring.datasource.url=jdbc:mysql://localhost:3306/db_blog_vl?serverTimezone=GMT%2B8&userUnicode=true*characterEncoding=utf-8
+spring.datasource.username=root
+spring.datasource.password=123456
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#tomcat jdbc
+
+#上传文件大小
+spring.servlet.multipart.maxFileSize=20MB
+spring.servlet.multipart.maxRequesSize=20MB
+#上传文件大小
+
+#jpa Jpa
+# ddl-auto：定义数据表的生成策略。update：更新或者创建数据表结构
+spring.jpa.hibernate.ddl-auto=update
+#控制台显示sql语句
+spring.jpa.show-sql=true
+spring.jpa.database-platform=org.hibernate.dialect.MySQLInnoDBDialect
+#jpa Jpa default=MyISAM---InnoDB
+
+#thymeleaf config
+#页面热加载
+spring.thymeleaf.cache=false
+spring.freemarker.suffix=.html
+spring.freemarker.cache=false
+spring.freemarker.charset=UTF-8
+#thymeleaf config
+
+#lucene setting
+# /home/lucene/java456_blog
+# C://lucene//java456_blog
+lucene.path=C://lucene//java456_blog
+#lucene setting
+
+
+pom.xml管理meven依赖  JSON
+删除依赖 test
+
+springboot jpa作用  自动生成数据库所需要的表
+
+
+
+

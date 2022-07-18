@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+     <!--配置SQLServer连接属性 -->
+    <!-- 第一步配置方言 -->
+    <!--MySql 驱动程序 eg. mysql-connector-java-5.1.6-bin.jar-->
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <!-- JDBC URL -->
+    <property name="connection.url">jdbc:mysql://localhost:3306/book_system?characterEncoding=utf-8</property>
+    <!-- 数据库用户名-->
+    <property name="connection.username">root</property>
+    <!-- 数据库密码-->
+    <property name="connection.password">root</property>
+
+
+    <!-- 配置jpa实现产品的基本属性 -->
+    <!-- 在控制台显示SQL语句 -->
+    <property name="show_sqlserver">true</property>
+    <!-- SQL dialect -->
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    <!--格式化sql -->
+    <property name="format_sql">true</property>
+    <!--根据需要自动生成、更新数据表 -->
+    <property name="hbm2ddl.auto">update</property>
+    <!--<property name="myeclipse.connection.profile">sqlserver</property>-->
+    <!--注册所有ORM映射文件 -->
+    <!--<mapping resource="com/sqlserver/domain/Customer.hbm.xml" />-->
+    <!--  二级缓存 查询缓存  -->
+    <property name="cache.use_second_level_cache">true</property>
+    <property name="cache.region.factory_class">org.hibernate.cache.ehcache</property>
+    <property name="cache.use_query_cache">true</property>
+
+  </session-factory>
+</hibernate-configuration>

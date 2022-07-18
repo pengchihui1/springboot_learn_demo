@@ -1,0 +1,96 @@
+2020-6-24
+创建项目  启动成功
+添加JSON依赖
+配置jpa hibernate
+
+2020-6-25
+导入mysql jar包
+配置数据库
+配置自动import
+添加shiro依赖
+添加hibernate-validator依赖解决@NotNull(message="真实姓名不能为空")报错
+添加 Config  Role User Permission  Menu  五个实体
+序列化时间
+
+2020-6-26
+添加 BookType  Book  2个实体 启动项目生成表
+解决问题  jpa启动停止   spring-boot-starter-tomcat 注释 <scope>provided</scope>
+
+2020-6-27
+解决警告open-in-view
+解决警告Cannot find template location
+解决问题 HikariPool-1  Mysql在5以后  connection空闲超过8个小时 Mysql将自动断开该connection   使用SQL语句修改   set global wait_timeout=1000000;
+解决问题Hibernate 不同数据库的连接及SQL方言
+更换高版本mysql驱动包5.1.6   com.mysql.cj.jdbc.Driver
+springboot测试mysql连接成功
+待改进  改用application.yml(可以不用)
+springboot2.3中hibernate-validator改成了spring-boot-starter-validation
+
+2020-6-28
+配置thymeleaf
+配置热部署，就是改动代码后不用重启
+maven的pom.xml需要配置插件防止java中的文件加载不进来
+配置数据库引擎 spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+升级mysql权限grant all privileges on *.* to 'root'@'localhost' identified by 'root' with grant option;
+并刷新权限flush privileges; 退出quit;
+tomcat
+
+2020-6-29
+hbm2ddl.auto(新版)ddl-auto
+java.sql.Date=>import java.util.Date;
+注释ServletInitializer
+最大boss注释UserUser里面的import org.apache.catalina.Role;
+字符串@NotNull  元素@NotEmpty(引用类型与基本类型的差别)  只能用于字符串@NotBlank
+springboot自带freemark，thymleaf能取代JSP
+go用于游戏引擎  云开发  web   unit
+取消compact MIddle package显示每级目录
+添加jq
+添加layui-ui框架2.4.5版本
+
+2020-7-12
+BigDecimal     价格精确类型   浮点数字
+Thymeleaf整合shiro标签
+<dependency>
+    <groupId>org.apache.shiro</groupId>
+    <artifactId>shiro-core</artifactId>
+    <version>1.4.0</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.shiro</groupId>
+    <artifactId>shiro-spring</artifactId>
+    <version>1.4.0</version>
+</dependency>
+<dependency>
+    <groupId>com.github.theborakcmpanioni</groupId>
+    <artifactId>thymeleaf-extras-shiro</artifactId>
+    <version>2.0.0</version>
+</dependency>
+
+jpa查询
+简单条件查询 JpaRepository<Role,Integer>
+jpa动态条件查询 JpaSpecificationExecutor<Role>
+
+
+jdk
+http://www.baidu.com/link?url=obITVWcoGd39h8Cjvk07PsEjfXrR5wS2SdSR_1vTwNS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

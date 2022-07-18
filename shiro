@@ -1,0 +1,40 @@
+springboot+layui+mybatis  仓库管理系统
+模板 gitee.com/layuicms/layuicms2.0
+
+shiro的核心API
+Subject:用户主体
+SecurityManager:安全管理器
+Realm:Shiro链接数据的桥梁
+
+springboot 整合shiro步骤
+引入maven依赖
+编写shiroConfig配置类
+
+@Configuration
+public class ShiroConfig{
+//创建ShiroFilterFactoryBean
+
+//创建DefaultWebSecurityManager
+
+// 创建Realkm
+}
+
+整合Mybatis
+druid
+mysql
+mybatis
+thymeleaf-shiro
+
+springboot.datasource.type=com.alibaba.druid.pool.DruidDataSource
+mybatis.type-aliases-package=com.itheima.domain
+
+
+
+
+
+
+
+
+
+
+

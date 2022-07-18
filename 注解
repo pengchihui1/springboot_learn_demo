@@ -1,0 +1,105 @@
+---------------------------------- entity（hibernate的jpa）------------------------------------------------(实体类,数据持久化)
+hibernate除了作为ORM框架之外，它也是一种jpa下实现，所以说jpa是hibernate功能的子集
+1.常用基本注解
+    @Entity  对实体注释  任何Hibernate映射对象都要有这个注释
+    @Table   声明此对象映射到数据库的数据表
+    @Basic   没加注解自动的
+    @Column  声明该属性与数据库字段的映射关系
+    @Transient 表示此属性与表没有映射关系,不需要映射到数据表的一列
+    @Id        声明此属性为主键
+    @GeneratedValue  指定主键的生成策略
+        TABLE：使用表保存id值
+        IDENTITY：identitycolumn
+        SEQUENCR ：sequence
+        AUTO：根据数据库的不同使用上面三个
+    @Temporal  时间   TemporalType.Timestamp/date
+    @OneToMany  一对多关联关系   mappedBy='book'  不能说使用@JoinColumn属性了
+    @ManyToOne  一对多声明
+    @JoinColumn 一对多声明
+    @OneToOne   一对一关联关系  unique=true  mappedBy='book'  建议设置mappedBy
+    @OneToOne   一对一关联声明
+    @JoinColumn 一对一关联声明  映射外键列
+        @ManyToMany 多对多关联声明  name指向中间表名字，joinColumns 当前类在中间表的外键 inverseJoinColumns referencedColumnName 映射关联关系的一方，不建议修改fetch属性
+        @JoinTable  中间表
+    @inverseJoinColumns
+    @Lob  表示该属性持久化为Blob或者Clob类型，具体取决于属性的类型
+    @Version 该注释可用于在实体Bean中添加乐观锁支持
+2.特殊注解
+    @Transient
+    @Temporal 用table 来生成主键
+
+3.将主键的值，单纯保存到一个数据库的表中，主键的值每次都从指定的表中查询来获得
+@TableGenerator(name='ID_GENERATOR',table='BOOK',allocationSize=1,initalValue=1,pkColumnName='bookname',pkColumnValue='小说',valueColumnName='ID_VAL')
+@GenerateValue(generator='ID_GENERATOR')
+---------------------------------- controller---------------------------------------------(控制层)
+@RestController
+      @RestController是@controller和@resposeBody的结合体，也就是说他会把你的数据返回到你页面的body里面，
+      而如果使用@controller那么你返回的数据就会直接当作视图进行返回，配置的试图解析器也不会起作用。
+
+@Param
+      1.当你使用了使用@Param声明参数时，如果使用 #{} 或${} 的方式都可以
+          @Select("select column from tablewhere userid = ${userid} ")
+          public int selectColumn(@Param("userid") intuserid);
+      2.不使用@Param注解时，参数只能有一个，并且是Javabean
+          @Select("SELECT * from Tablewhere id = ${id}")
+          Enchashment selectUserById(User user);
+
+@Controller 负责注册一个bean 到spring 上下文中，bean 的ID 默认为类名称开头字母小写
+
+@RequestMapping('/')
+
+@ResponseBody()            用来返回JSON数据
+
+@Autowired(required=false)
+与@Resource 的区别在于，
+         @Resource 允许通过bean 名称或bean 类型两种方式进行查找@Autowired(required=false) 表示，
+         如果spring 上下文中没有找到该类型的bean 时， 才会使用new SoftPMServiceImpl();
+RequestMapping
+         可以声明到类或方法上
+@ConfigurationProperties(prefix='person') springboot配置文件中的内容 prefix配置文件中指定下的属性
+
+---------------------------------- 启动项配置----------------------------------------------（业务层）
+@EnableAutoConfiguration  启动自动配置
+@ComponentScan     扫描类
+
+---------------------------------- service------------------------------------------------（业务层）
+
+---------------------------------- hibernate.cfg.xml--------------------------------------
+
+---------------------------------- application.properties---------------------------------
+
+---------------------------------- Component----------------------------------------------（其他）
+@Component
+        泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注。
+        把普通pojo实例化到spring容器中。
+
+---------------------------------- jdk特性 ------------------------------------------------（特性）
+JDK5.0
+      Annotation  元数据，它是一种描述数据的数据
+
+---------------------------------- JPQL语言 -----------------------------------------------（特性）
+JPQL语言
+     javav Persistence Query Language的简称。JPQL是一种和SQL非常类似的中间件和对象话查询语言，它最终会被编译成针对不同底层数据库的SQL查询，从而屏蔽不同数据库的差异
+
+query主要方法
+int       executeUpdate()     用于执行updata和delete语句
+list      getResultList()     用于查询列表
+object    getSingleResult()   查询单个结果
+query     setFirstResult(int startPosition)  实体记录返回查询结果
+query     setMaxResults(int maxResult) 设置返回结果实体的最大数
+query     setFlushMode(FlushModeType flushMode)  设置查询对象的Flush模式
+query     setHint(QueryHints.hint_cacheable,true)  查询缓存执行一条sql
+
+distinct
+
+sql执行顺序 --from --where --group by --select --having --order by
+group by的解释
+我们不能用where来筛选超过1000000的地区，因为表中不存在这样一条记录
+相反，HAVING子句可以让我们筛选成组后的各组数据
+
+---------------------------------- yml----------------------------------------------------(配置文件)
+server:
+   port:8081
+
+
+ 
